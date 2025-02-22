@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Teko:wght@300..700&display=swap');
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* Main Container with Gatsby Background */
+.Main {
+  height: 100vh;
+  width: 100%;
+  background-image: url('ANIMAGES/GATSBY.jpg');
+  background-size: cover;      
+  background-position: center; 
+  background-repeat: no-repeat; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.Main::before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  height: 100%; 
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+
+/* Title Styling */
+.page-title {
+  position: relative;
+  z-index: 1; 
+  font-size: 6rem;  
+  font-family: Poppins, Arial;
+  color: #c5ac3f;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7); 
+  animation: fadeInDown 2s ease;
+}
+
+/* Group Members Container */
+.members-container {
+  position: relative;
+  z-index: 1; 
+  background-color: rgba(0,0,0,0.6);
+  padding: 2rem;
+  border: 2px solid #CFB53B;
+  border-radius: 0.5rem;
+  width: 80%;
+  max-width: 70rem;
+  text-align: center;
+  color: #fff;
+  animation: fadeInUp 2s ease;
+}
+
+/* Container Title */
+.members-container h2 {
+  font-size: 3rem;
+  font-family: Poppins, Arial;
+  margin-bottom: 2rem;
+  color: #CFB53B;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+}
+
+/* Member Cards */
+.members-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+
+.member-card {
+  background-color: rgba(0,0,0,0.8);
+  border: 1px solid #CFB53B;
+  padding: 2rem;
+  width: 15rem;
+  border-radius: 0.4rem;
+  font-size: 1.8rem;
+  font-family: Poppins, Arial;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  color: #fff;
+}
+
+.member-card span {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.4rem;
+  color: #f2f2f2;
+}
+
+/* Hover Effect */
+.member-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 0 10px 2px rgba(255,215,0,0.6);
+  color: gold;
+}
+
+/* Fade-In Animations */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0; 
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0; 
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:root {
+  --washed-out-gold: #CFB53B;
+}
+
+/* "Next" Button */
+.next-button {
+  display: inline-block; 
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  font-family: Poppins, Arial;
+  color: #fff;
+  background-color: transparent; 
+  border: 2px solid var(--washed-out-gold); 
+  border-radius: 0.5rem;
+  text-decoration: none; 
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  transition: all 0.3s ease;
+  z-index: 2;
+  align-self: center;
+}
+
+.next-button:hover {
+  color: black;
+  background-color: var(--washed-out-gold);
+  transform: translateY(-2px);
+}

@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* RESET & BASE STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px for easier calculations */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* MAIN BACKGROUND LAYOUT */
+.Main {
+  width: 100%;
+  height: 100vh;
+  background-image: url('ANIMAGES/THEGREAT_upscayl_4x_upscayl-standard-4x.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;  /* Stack horizontal-layout on top, nav-container below */
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* CONTAINER FOR TEXT & IMAGES (SIDE-BY-SIDE) */
+.horizontal-layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 120rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* INTRO (TEXT) SECTION */
+.intro-container {
+  flex: 1;
+  max-width: 60rem;
+  color: #fff;
+  text-align: left;
+  animation: fadeInZoom 1.8s ease forwards;
+  margin-bottom: 0;
+}
+
+.movie-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+}
+
+.tagline {
+  font-size: 2rem;
+  line-height: 1.4;
+  max-width: 60rem;
+}
+
+/* IMAGES SECTION */
+.images-container {
+  display: flex;
+  flex-direction: column; /* stack images vertically */
+  gap: 2rem;
+}
+
+.intro-image {
+  width: 20rem;
+  height: auto;
+  border: 2px solid #FFD700;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  animation: rotateIn 1.5s ease forwards; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* NAVIGATION BUTTONS CONTAINER */
+.nav-container {
+  display: flex;
+  justify-content: center;     /* Center buttons horizontally */
+  align-items: center;
+  gap: 2rem;                   /* Space between buttons */
+  width: 100%;
+  max-width: 120rem;
+  margin: 2rem auto 0;         /* Space above nav buttons */
+  position: relative;
+  z-index: 1;
+}
+
+/* BUTTONS */
+.nav-button {
+  text-decoration: none;
+  font-size: 1.8rem; 
+  padding: 1rem 2rem;
+  border: 2px solid #FFD700;
+  border-radius: 0.5rem;
+  color: #FFD700;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+/* Hover effect */
+.nav-button:hover {
+  background: #FFD700;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* KEYFRAMES: fadeInZoom */
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* KEYFRAMES: rotateIn */
+@keyframes rotateIn {
+  0% {
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
+

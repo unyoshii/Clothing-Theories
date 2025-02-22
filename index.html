@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="Style.css" />
+  <title>Introduction</title>
+</head>
+<body>
+  <div class="Main">
+    <!-- Title Section -->
+    <h1 class="page-title">The Great Gatsby</h1>
+
+    <!-- Group Members Container -->
+    <div class="members-container">
+      <h2>Group Members</h2>
+      <div class="members-list">
+        <!-- Each member has an ID for the JS to target -->
+        <div class="member-card" id="card-oshane">Oshane Smith<br><span>2209585</span></div>
+        <div class="member-card" id="card-cole">Cole Nash<br><span>1907189</span></div>
+        <div class="member-card" id="card-brianna">Brianna Wickham<br><span>1905209</span></div>
+        <div class="member-card" id="card-natrual">Natrual Stevens<br><span>1704484</span></div>
+        <div class="member-card" id="card-javaun">Javaun Powell<br><span>2209085</span></div>
+      </div>
+    </div>
+
+    <!-- "Next" Button -->
+    <a href="http://127.0.0.1:5500/Objectives.html" class="next-button">Next</a>
+  </div>
+
+  <!-- JavaScript to change names on click -->
+  <script>
+    /* 
+      For each member, replace the name+ID with:
+         THEORY LABEL
+         <br>
+         <span>THE ORIGINAL ID</span>
+    */
+
+    document.getElementById("card-oshane").addEventListener("click", function() {
+      this.innerHTML = `
+        Adornment Theory
+        <br>
+        <span>2209585</span>
+      `;
+    });
+
+    document.getElementById("card-cole").addEventListener("click", function() {
+      this.innerHTML = `
+        Immodesty Theory
+        <br>
+        <span>1907189</span>
+      `;
+    });
+
+    document.getElementById("card-brianna").addEventListener("click", function() {
+      this.innerHTML = `
+        Protection Theory
+        <br>
+        <span>1905209</span>
+      `;
+    });
+
+    document.getElementById("card-natrual").addEventListener("click", function() {
+      this.innerHTML = `
+        Modesty Theory
+        <br>
+        <span>1704484</span>
+      `;
+    });
+
+    document.getElementById("card-javaun").addEventListener("click", function() {
+      this.innerHTML = `
+        Introduction
+        <br>
+        <span>2209085</span>
+      `;
+    });
+
+    // No event listener for any additional members
+  </script>
+</body>
+</html>

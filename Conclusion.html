@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conclusion</title>
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <!-- CSS -->
+  <link rel="stylesheet" href="Style10.css" />
+</head>
+<body>
+  <div class="Main">
+    
+    <!-- Intro/Conclusion Text Container -->
+    <div class="conclusion-container">
+      <h1 class="page-title">Final Thoughts</h1>
+      <p class="conclusion-text">
+        After exploring various clothing theories—Adorn, Modesty, Immodesty and Protection, 
+        —we see how clothing is a form of expression, identity, and comfort. 
+        From Gatsby’s grand parties to the practicalities of everyday wear, fashion 
+        weaves together personal style, cultural norms, and constant innovation. 
+        Ultimately, whether we dress to conceal, reveal, protect, or captivate, 
+        clothing remains an ever-evolving reflection of society.
+      </p>
+      <!-- A fun JS button -->
+      <button class="thanks-button" onclick="showThanks()">Show Thanks!</button>
+      
+      <!-- Hidden message container -->
+      <div class="thanks-message hidden">
+        <h3>Thank You!</h3>
+        <p>We appreciate you exploring these fashion theories with us. Stay stylish!</p>
+      </div>
+    </div>
+
+    
+
+    <!-- Navigation (Optional) -->
+    <div class="nav-container">
+      <a href="http://127.0.0.1:5500/greatgatsbyprotect.html" class="nav-button">Previous</a>
+      <a href="http://127.0.0.1:5500/index.html" class="nav-button">Home</a>
+    </div>
+    
+  </div><!-- .Main ends -->
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function showThanks() {
+      const msg = document.querySelector('.thanks-message');
+      // Reveal the hidden message with a CSS class
+      msg.classList.remove('hidden');
+      msg.classList.add('show-message');
+    }
+  </script>
+</body>
+</html>

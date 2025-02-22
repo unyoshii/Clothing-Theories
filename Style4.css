@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px, easier for math */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Main Container with Gatsby Background */
+.Main {
+  height: 100vh;
+  width: 100%;
+  background-image: url('ANIMAGES/THEGREAT_upscayl_4x_upscayl-standard-4x.png');
+  background-size: cover;      
+  background-position: center; 
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 2rem;
+}
+
+/* OPTIONAL OVERLAY */
+.Main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%; 
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* TEXT SECTION */
+.text-container {
+  position: relative;
+  z-index: 1; /* Above overlay */
+  max-width: 60rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 3rem;
+  animation: fadeInDown 1.5s ease forwards;
+}
+
+.page-title {
+  font-size: 4rem;
+  
+  margin-bottom: 1rem;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.description {
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
+/* IMAGES CONTAINER */
+.images-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 8rem; /* Increased to prevent video overlap with nav */
+}
+
+/* INDIVIDUAL IMAGE CARD */
+.image-card {
+  position: relative; /* So the .video-popup can be absolutely positioned inside */
+  width: 20rem;       /* Same as .animated-image width for consistency */
+  height: auto;
+}
+
+/* The actual image styling + animations */
+.animated-image {
+  width: 100%;
+  height: auto;
+  border: 2px solid #FFD700;    /* Gold border */
+  border-radius: 0.5rem;
+  object-fit: cover;
+  
+  /* Slide-up animation on load */
+  animation: slideUpAndStay 1.5s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect on the image itself */
+.animated-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+/* VIDEO POPUP on hover */
+.video-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30rem;        /* Adjust as needed */
+  height: auto;
+  display: none;       /* Hidden by default */
+  background-color: rgba(0,0,0,0.8);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  z-index: 2;          /* Higher than images, but can be under nav */
+}
+
+/* Show video when hovering over .image-card */
+.image-card:hover .video-popup {
+  display: block;        
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* The <video> element inside the popup */
+.video-popup video {
+  width: 100%;
+  height: auto;
+  border: 2px solid #FFD700;  /* Gold border */
+  border-radius: 0.5rem;
+}
+
+/* NAVIGATION BUTTONS */
+.nav-container {
+  position: relative;
+  z-index: 3; /* Ensure nav is above the video popup */
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 120rem;
+  margin: 4rem auto 0; /* Increased top margin to bring buttons further down */
+}
+
+/* Buttons */
+.nav-button {
+  text-decoration: none;
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  border: 2px solid #FFD700;  /* Gold border */
+  border-radius: 0.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #FFD700;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* KEYFRAMES: fadeInDown (for text) */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* KEYFRAMES: slideUpAndStay (for images) */
+@keyframes slideUpAndStay {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* KEYFRAMES: fadeIn (for video popup) */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
